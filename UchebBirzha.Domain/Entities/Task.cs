@@ -14,9 +14,9 @@ namespace UchebBirzha.Domain.Entities
         public DateTime CreatedAt { get; private set; }
 
         
-        public string CustomerId { get; private set; }
+        public int CustomerId { get; private set; }
         public int CategoryId { get; private set; }
-        public string? ExecutorId { get; private set; }
+        public int? ExecutorId { get; private set; }
 
      
         public virtual User Customer { get; private set; }
@@ -27,13 +27,13 @@ namespace UchebBirzha.Domain.Entities
 
         private Task() { }
 
-        public Task(string title, string description, decimal budget, DateTime deadline, string customerId, int categoryId)
+        public Task(string title, string description, decimal budget, DateTime deadline, int customerId, int categoryId)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));
             Description = description ?? throw new ArgumentNullException(nameof(description));
             Budget = budget > 0 ? budget : throw new ArgumentException("Budget must be positive");
             Deadline = deadline > DateTime.UtcNow ? deadline : throw new ArgumentException("Deadline must be in future");
-            CustomerId = customerId ?? throw new ArgumentNullException(nameof(customerId));
+            CustomerId = customerId;
             CategoryId = categoryId;
 
             Status = TaskWorkStatus.Open;
@@ -46,7 +46,7 @@ namespace UchebBirzha.Domain.Entities
             Status = newStatus;
         }
 
-        public void SetExecutor(string executorId)
+        public void SetExecutor(int executorId)
         {
             ExecutorId = executorId;
         }

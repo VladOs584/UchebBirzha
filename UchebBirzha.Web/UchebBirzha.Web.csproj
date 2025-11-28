@@ -1,6 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UchebBirzha.Domain\UchebBirzha.Domain.csproj" />
     <ProjectReference Include="..\UchebBirzha.Application\UchebBirzha.Application.csproj" />
     <ProjectReference Include="..\UchebBirzha.Infrastructure\UchebBirzha.Infrastructure.csproj" />

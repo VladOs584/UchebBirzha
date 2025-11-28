@@ -22,7 +22,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IReadOnlyList<Domain.Entities.Task>> GetTasksByCustomerAsync(string customerId)
+        public async Task<IReadOnlyList<Domain.Entities.Task>> GetTasksByCustomerAsync(int customerId)
         {
             return await _dbSet
                 .Where(t => t.CustomerId == customerId)
@@ -34,7 +34,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IReadOnlyList<Domain.Entities.Task>> GetTasksByExecutorAsync(string executorId)
+        public async Task<IReadOnlyList<Domain.Entities.Task>> GetTasksByExecutorAsync(int executorId)
         {
             return await _dbSet
                 .Where(t => t.ExecutorId == executorId)

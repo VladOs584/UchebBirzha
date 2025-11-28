@@ -11,7 +11,7 @@ namespace UchebBirzha.Infrastructure.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        // DbSets - переименовываем чтобы избежать конфликта
+        
         public DbSet<User> UserSet => Set<User>();
         public DbSet<Domain.Entities.Task> TaskSet => Set<Domain.Entities.Task>();
         public DbSet<Bid> BidSet => Set<Bid>();

@@ -11,14 +11,14 @@ namespace UchebBirzha.Domain.Entities
 
       
         public int TaskId { get; private set; }
-        public string ExecutorId { get; private set; }
+        public int ExecutorId { get; private set; }
 
         public virtual Task Task { get; private set; }
         public virtual User Executor { get; private set; }
 
         private Bid() { }
-
-        public Bid(int taskId, string executorId, decimal proposedPrice, string comment)
+        
+        public Bid(int taskId, int executorId, decimal proposedPrice, string comment)
         {
             TaskId = taskId;
             ExecutorId = executorId;

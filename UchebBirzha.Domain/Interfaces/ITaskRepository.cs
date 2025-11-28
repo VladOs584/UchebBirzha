@@ -7,8 +7,8 @@ namespace UchebBirzha.Domain.Interfaces
     public interface ITaskRepository : IRepository<Task>
     {
         Task<IReadOnlyList<Task>> GetOpenTasksAsync();
-        Task<IReadOnlyList<Task>> GetTasksByCustomerAsync(string customerId);
-        Task<IReadOnlyList<Task>> GetTasksByExecutorAsync(string executorId);
+        Task<IReadOnlyList<Task>> GetTasksByCustomerAsync(int customerId);
+        Task<IReadOnlyList<Task>> GetTasksByExecutorAsync(int executorId);
         Task<IReadOnlyList<Task>> GetTasksByCategoryAsync(int categoryId);
         Task<IReadOnlyList<Task>> GetOverdueTasksAsync();
     }

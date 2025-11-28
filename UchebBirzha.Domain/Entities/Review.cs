@@ -10,8 +10,8 @@ namespace UchebBirzha.Domain.Entities
 
        
         public int TaskId { get; private set; }
-        public string AuthorId { get; private set; } // Кто оставил отзыв (заказчик)
-        public string ExecutorId { get; private set; } // Кому отзыв (исполнитель)
+        public int AuthorId { get; private set; } // Кто оставил отзыв (заказчик)
+        public int ExecutorId { get; private set; } // Кому отзыв (исполнитель)
 
        
         public virtual Task Task { get; private set; }
@@ -20,7 +20,7 @@ namespace UchebBirzha.Domain.Entities
 
         private Review() { }
 
-        public Review(int taskId, string authorId, string executorId, int rating, string comment)
+        public Review(int taskId, int authorId, int executorId, int rating, string comment)
         {
             TaskId = taskId;
             AuthorId = authorId;

@@ -18,7 +18,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IReadOnlyList<Bid>> GetBidsByExecutorAsync(string executorId)
+        public async Task<IReadOnlyList<Bid>> GetBidsByExecutorAsync(int executorId)
         {
             return await _dbSet
                 .Where(b => b.ExecutorId == executorId)
@@ -30,7 +30,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Bid> GetBidByTaskAndExecutorAsync(int taskId, string executorId)
+        public async Task<Bid> GetBidByTaskAndExecutorAsync(int taskId, int executorId)
         {
             return await _dbSet
                 .Include(b => b.Task)
@@ -38,7 +38,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .FirstOrDefaultAsync(b => b.TaskId == taskId && b.ExecutorId == executorId);
         }
 
-        public async Task<bool> HasExecutorBidForTaskAsync(int taskId, string executorId)
+        public async Task<bool> HasExecutorBidForTaskAsync(int taskId, int executorId)
         {
             return await _dbSet
                 .AnyAsync(b => b.TaskId == taskId && b.ExecutorId == executorId);

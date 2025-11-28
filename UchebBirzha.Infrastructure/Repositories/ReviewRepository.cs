@@ -9,7 +9,7 @@ namespace UchebBirzha.Infrastructure.Repositories
     {
         public ReviewRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IReadOnlyList<Review>> GetReviewsForExecutorAsync(string executorId)
+        public async Task<IReadOnlyList<Review>> GetReviewsForExecutorAsync(int executorId)
         {
             return await _dbSet
                 .Where(r => r.ExecutorId == executorId)
@@ -19,7 +19,7 @@ namespace UchebBirzha.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<decimal> GetAverageRatingForExecutorAsync(string executorId)
+        public async Task<decimal> GetAverageRatingForExecutorAsync(int executorId)
         {
             var average = await _dbSet
                 .Where(r => r.ExecutorId == executorId)
