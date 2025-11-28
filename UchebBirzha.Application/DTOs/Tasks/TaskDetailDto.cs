@@ -1,4 +1,6 @@
 ﻿using UchebBirzha.Application.Common;
+using UchebBirzha.Application.DTOs.Attachments;
+using UchebBirzha.Application.DTOs.Bids;
 using UchebBirzha.Domain.Enums;
 
 namespace UchebBirzha.Application.DTOs.Tasks

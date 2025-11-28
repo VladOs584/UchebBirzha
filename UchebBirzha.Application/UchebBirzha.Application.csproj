@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UchebBirzha.Domain\UchebBirzha.Domain.csproj" />
+	  <ProjectReference Include="..\UchebBirzha.Infrastructure\UchebBirzha.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -1,8 +1,14 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UchebBirzha.Domain.Interfaces;
 using UchebBirzha.Infrastructure.Data;
 using UchebBirzha.Infrastructure.Repositories;
+using UchebBirzha.Infrastructure.Services;
+using UchebBirzha.Infrastructure.Interfaces;
+using UchebBirzha.Application.Interfaces;
+using UchebBirzha.Application.Services;
+using Microsoft.AspNetCore.Identity;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +19,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 
 builder.Services.AddScoped<IUnitOfWork, ApplicationDbContext>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
