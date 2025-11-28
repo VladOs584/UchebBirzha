@@ -4,7 +4,7 @@ using UchebBirzha.Application.Interfaces;
 using UchebBirzha.Domain.Entities;
 using UchebBirzha.Domain.Enums;
 using UchebBirzha.Domain.Interfaces;
-using UchebBirzha.Application.Mappers;
+using UchebBirzha.Application.Mapper;
 using UchebBirzha.Infrastructure.Interfaces;
 
 namespace UchebBirzha.Application.Services

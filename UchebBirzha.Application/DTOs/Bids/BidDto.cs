@@ -11,7 +11,7 @@ namespace UchebBirzha.Application.DTOs.Bids
         public string TaskTitle { get; set; }
         public int ExecutorId { get; set; }
         public string ExecutorName { get; set; }
-        public decimal ExecutorRating { get; set; }
+        public decimal? ExecutorRating { get; set; }
         public int ExecutorCompletedTasks { get; set; }
     }
 }

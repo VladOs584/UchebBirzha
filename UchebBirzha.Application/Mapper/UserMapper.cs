@@ -2,7 +2,7 @@
 using UchebBirzha.Application.DTOs.Users;
 using UchebBirzha.Domain.Entities;
 
-namespace UchebBirzha.Application.Mappers
+namespace UchebBirzha.Application.Mapper
 {
     public static class UserMapper
     {
@@ -18,7 +18,7 @@ namespace UchebBirzha.Application.Mappers
                 LastName = user.LastName,
                 Role = user.Role.ToString(),
                 AvatarUrl = user.AvatarUrl,
-                Rating = user.Rating,
+                Rating = user.Rating ?? 0,
                 CompletedTasksCount = user.CompletedTasksCount
             };
         }
@@ -35,7 +35,7 @@ namespace UchebBirzha.Application.Mappers
                 LastName = user.LastName,
                 Role = user.Role,
                 AvatarUrl = user.AvatarUrl,
-                Rating = user.Rating,
+                Rating = user.Rating ?? 0,
                 CompletedTasksCount = user.CompletedTasksCount,
                 CreatedAt = user.CreatedAt
             };
@@ -52,7 +52,7 @@ namespace UchebBirzha.Application.Mappers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 AvatarUrl = user.AvatarUrl,
-                Rating = user.Rating,
+                Rating = user.Rating ?? 0,
                 CompletedTasksCount = user.CompletedTasksCount,
                 CreatedTasksCount = createdTasksCount,
                 ActiveBidsCount = activeBidsCount

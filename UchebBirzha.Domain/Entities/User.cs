@@ -48,7 +48,7 @@ namespace UchebBirzha.Domain.Entities
             AvatarUrl = avatarUrl;
         }
 
-        public void SetRating(decimal rating)
+        public void SetRating(decimal? rating)
         {
             Rating = rating;
         }

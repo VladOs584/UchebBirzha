@@ -1,7 +1,7 @@
 ﻿using UchebBirzha.Application.Interfaces;
 using UchebBirzha.Application.DTOs.Users;
 using UchebBirzha.Domain.Interfaces;
-using UchebBirzha.Application.Mappers;
+using UchebBirzha.Application.Mapper;
 
 namespace UchebBirzha.Application.Services
 {
@@ -57,7 +57,7 @@ namespace UchebBirzha.Application.Services
         {
             var executors = await _userRepository.GetExecutorsWithHighRatingAsync(4.0m);
             return executors
-                .OrderByDescending(e => e.Rating)
+                .OrderByDescending(e => e.Rating ?? 0) 
                 .ThenByDescending(e => e.CompletedTasksCount)
                 .Take(count)
                 .Select(e => e.ToUserDto())
@@ -77,7 +77,7 @@ namespace UchebBirzha.Application.Services
             return user.ToUserDto();
         }
 
-        public async Task UpdateUserRatingAsync(int executorId, decimal newRating)
+        public async Task UpdateUserRatingAsync(int executorId, decimal? newRating)
         {
             var user = await _userRepository.GetByIdAsync(executorId);
             ValidateEntityExists(user, "User", executorId);
