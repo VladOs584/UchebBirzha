@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UchebBirzha.Domain.Interfaces
+﻿namespace UchebBirzha.Domain.Interfaces
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        ITaskRepository Tasks { get; }
+        IUserRepository Users { get; }
+        IBidRepository Bids { get; }
+        ICategoryRepository Categories { get; }
+        IReviewRepository Reviews { get; }
+
+        Task<int> SaveChangesAsync();
     }
 }

@@ -29,17 +29,18 @@ namespace UchebBirzha.Domain.Entities
 
         public Task(string title, string description, decimal budget, DateTime deadline, string customerId, int categoryId)
         {
-            Title = title;
-            Description = description;
-            Budget = budget;
-            Deadline = deadline;
-            CustomerId = customerId;
+            Title = title ?? throw new ArgumentNullException(nameof(title));
+            Description = description ?? throw new ArgumentNullException(nameof(description));
+            Budget = budget > 0 ? budget : throw new ArgumentException("Budget must be positive");
+            Deadline = deadline > DateTime.UtcNow ? deadline : throw new ArgumentException("Deadline must be in future");
+            CustomerId = customerId ?? throw new ArgumentNullException(nameof(customerId));
             CategoryId = categoryId;
+
             Status = TaskWorkStatus.Open;
-            CreatedAt = DateTime.UtcNow;
+            CreatedAt = DateTime.UtcNow; 
         }
 
-        
+
         public void ChangeStatus(TaskWorkStatus newStatus)
         {
             Status = newStatus;

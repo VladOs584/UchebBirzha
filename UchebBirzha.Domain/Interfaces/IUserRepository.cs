@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UchebBirzha.Domain.Entities;
 
 namespace UchebBirzha.Domain.Interfaces
 {
-    internal interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
+        Task<User> GetByEmailAsync(string email);
+        Task<IReadOnlyList<User>> GetExecutorsWithHighRatingAsync(decimal minRating);
+        Task<bool> IsEmailUniqueAsync(string email);
     }
 }

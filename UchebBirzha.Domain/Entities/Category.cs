@@ -9,8 +9,21 @@ namespace UchebBirzha.Domain.Entities
 
         public virtual ICollection<Task> Tasks { get; private set; } = new List<Task>();
 
-        private Category() { }
+       
+        private Category()
+        {
+            
+        }
 
+  
+        internal Category(int id, string name, string description)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+        }
+
+  
         public Category(string name, string description)
         {
             Name = name;

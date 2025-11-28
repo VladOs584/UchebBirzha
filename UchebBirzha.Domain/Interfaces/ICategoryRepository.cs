@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UchebBirzha.Domain.Entities;
 
 namespace UchebBirzha.Domain.Interfaces
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository : IRepository<Category>
     {
+        Task<Category> GetByNameAsync(string name);
     }
 }

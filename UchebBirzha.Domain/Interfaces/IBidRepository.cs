@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UchebBirzha.Domain.Entities;
 
 namespace UchebBirzha.Domain.Interfaces
 {
-    internal interface IBidRepository
+    public interface IBidRepository : IRepository<Bid>
     {
+        Task<IReadOnlyList<Bid>> GetBidsForTaskAsync(int taskId);
+        Task<IReadOnlyList<Bid>> GetBidsByExecutorAsync(string executorId);
+        Task<Bid> GetBidByTaskAndExecutorAsync(int taskId, string executorId);
     }
 }

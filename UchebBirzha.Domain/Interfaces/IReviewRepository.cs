@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UchebBirzha.Domain.Entities;
 
 namespace UchebBirzha.Domain.Interfaces
 {
-    internal interface IReviewRepository
+    public interface IReviewRepository : IRepository<Review>
     {
+        Task<IReadOnlyList<Review>> GetReviewsForExecutorAsync(string executorId);
+        Task<decimal> GetAverageRatingForExecutorAsync(string executorId);
+        Task<bool> HasReviewForTaskAsync(int taskId);
     }
 }
