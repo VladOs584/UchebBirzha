@@ -1,0 +1,46 @@
+## .NET ##
+**/[Bb]in/
+**/[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ncrunchproject
+*.vs/
+*.swp
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]uild/
+bld/
+
+# NuGet
+**/packages/
+*.nupkg
+.nuget/
+nuget.exe
+
+# IDE
+.vscode/
+.idea/
+
+# Database
+*.mdf
+*.ldf
+App_Data/
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific
+appsettings.Development.json

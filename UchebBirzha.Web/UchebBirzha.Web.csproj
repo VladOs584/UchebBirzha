@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\UchebBirzha.Domain\UchebBirzha.Domain.csproj" />
+    <ProjectReference Include="..\UchebBirzha.Application\UchebBirzha.Application.csproj" />
+    <ProjectReference Include="..\UchebBirzha.Infrastructure\UchebBirzha.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
